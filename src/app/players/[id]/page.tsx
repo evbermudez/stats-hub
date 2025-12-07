@@ -1,0 +1,92 @@
+import { notFound } from 'next/navigation';
+
+import { getPlayerById, getTeamBySlug } from '@/lib/data';
+
+type PlayerPageProps = {
+  params: {
+    id: string;
+  };
+};
+
+export default function PlayerPage({ params }: PlayerPageProps) {
+  const player = getPlayerById(params.id);
+
+  if (!player) {
+    notFound();
+  }
+
+  const currentTeam = player.currentTeamSlug
+    ? getTeamBySlug(player.currentTeamSlug)
+    : undefined;
+
+  const height = player.heightCm ? `${player.heightCm} cm` : '—';
+  const weight = player.weightKg ? `${player.weightKg} kg` : '—';
+  const teamLabel =
+    currentTeam?.name && currentTeam?.season
+      ? `${currentTeam.name} (${currentTeam.season})`
+      : player.currentTeamSlug ?? 'No current team';
+
+  return (
+    <main className="min-h-screen bg-slate-950 p-6 text-slate-100">
+      <div className="mx-auto flex max-w-3xl flex-col gap-6">
+        <header className="space-y-2">
+          <p className="text-xs font-semibold uppercase tracking-[0.25em] text-slate-500">
+            Player Profile
+          </p>
+          <h1 className="text-3xl font-semibold">
+            #{player.jerseyNumber} {player.firstName} {player.lastName}
+          </h1>
+          <p className="text-sm text-slate-400">Position: {player.position}</p>
+        </header>
+
+        <div className="grid gap-4 md:grid-cols-2">
+          <section className="rounded-xl border border-slate-800 bg-slate-900/40 p-4 shadow-lg shadow-slate-900/40">
+            <h2 className="mb-3 text-lg font-semibold">Vitals</h2>
+            <dl className="space-y-2 text-sm">
+              <div className="flex items-center justify-between">
+                <dt className="text-slate-400">Position</dt>
+                <dd className="font-medium text-slate-200">{player.position}</dd>
+              </div>
+              <div className="flex items-center justify-between">
+                <dt className="text-slate-400">Height</dt>
+                <dd className="font-medium text-slate-200">{height}</dd>
+              </div>
+              <div className="flex items-center justify-between">
+                <dt className="text-slate-400">Weight</dt>
+                <dd className="font-medium text-slate-200">{weight}</dd>
+              </div>
+            </dl>
+          </section>
+
+          <section className="rounded-xl border border-slate-800 bg-slate-900/40 p-4 shadow-lg shadow-slate-900/40">
+            <h2 className="mb-3 text-lg font-semibold">Current Team</h2>
+            <div className="rounded-lg border border-slate-800 bg-slate-900/70 px-3 py-2 text-sm">
+              <p className="font-medium text-slate-200">{teamLabel}</p>
+              {currentTeam?.city && (
+                <p className="text-slate-500">{currentTeam.city}</p>
+              )}
+            </div>
+          </section>
+        </div>
+
+        <section className="rounded-xl border border-slate-800 bg-slate-900/40 p-4 shadow-lg shadow-slate-900/40">
+          <h2 className="mb-3 text-lg font-semibold">Team History</h2>
+          {player.teamHistory.length > 0 ? (
+            <ul className="space-y-2 text-sm">
+              {player.teamHistory.map((teamSlug) => (
+                <li
+                  key={teamSlug}
+                  className="rounded-lg border border-slate-800 bg-slate-900/70 px-3 py-2"
+                >
+                  {teamSlug}
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <p className="text-sm text-slate-500">No team history.</p>
+          )}
+        </section>
+      </div>
+    </main>
+  );
+}
