@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 import { getLeagues, getPlayers, getTeams } from '@/lib/data';
 
 export default function HomePage() {
@@ -23,14 +25,18 @@ export default function HomePage() {
             <h2 className="mb-3 text-lg font-semibold">Players</h2>
             <ul className="space-y-2 text-sm">
               {players.map((player) => (
-                <li
-                  key={player.id}
-                  className="rounded-lg border border-slate-800 bg-slate-900/70 px-3 py-2"
-                >
-                  <span className="font-medium text-slate-200">
-                    #{player.jerseyNumber} {player.firstName} {player.lastName}
-                  </span>
-                  <span className="ml-2 text-xs uppercase text-slate-500">{player.position}</span>
+                <li key={player.id}>
+                  <Link
+                    href={`/players/${player.id}`}
+                    className="block rounded-lg border border-slate-800 bg-slate-900/70 px-3 py-2 hover:underline"
+                  >
+                    <span className="font-medium text-slate-200">
+                      #{player.jerseyNumber} {player.firstName} {player.lastName}
+                    </span>
+                    <span className="ml-2 text-xs uppercase text-slate-500">
+                      {player.position}
+                    </span>
+                  </Link>
                 </li>
               ))}
               {players.length === 0 && (

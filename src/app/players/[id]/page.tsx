@@ -1,15 +1,20 @@
 import { notFound } from 'next/navigation';
 
-import { getPlayerById, getTeamBySlug } from '@/lib/data';
+import { getPlayerById, getPlayers, getTeamBySlug } from '@/lib/data';
 
 type PlayerPageProps = {
-  params: {
+  params: Promise<{
     id: string;
-  };
+  }>;
 };
 
-export default function PlayerPage({ params }: PlayerPageProps) {
-  const player = getPlayerById(params.id);
+export async function generateStaticParams() {
+  return getPlayers().map(({ id }) => ({ id }));
+}
+
+export default async function PlayerPage({ params }: PlayerPageProps) {
+  const { id } = await params;
+  const player = getPlayerById(id);
 
   if (!player) {
     notFound();
