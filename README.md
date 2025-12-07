@@ -1,36 +1,35 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## Stats Hub (Basketball)
 
-## Getting Started
+A static-data basketball dashboard built with Next.js (App Router), React, TypeScript, and Tailwind CSS. Uses pnpm and the `@/` import alias with typed JSON data.
 
-First, run the development server:
+### Tech & Structure
+- Next.js (app directory, server components)
+- TypeScript types in `src/types`
+- Static JSON data in `src/data`
+- Data helpers in `src/lib/data.ts`
+- Tailwind styling (see `src/app/globals.css`)
 
+### Data shape (JSON)
+- `src/data/players.json` → `Player` (ids `p1`, `p2`, `p3` included)
+- `src/data/teams.json` → `Team` (includes `davao-dragons-2025`, `manila-sharks-2025`)
+- `src/data/leagues.json` → `League` (`summer-league-2025`)
+
+### Helpful functions
+Imported from `@/lib/data`:
+- `getPlayers()`, `getPlayerById(id)`
+- `getTeams()`, `getTeamBySlug(slug)`
+- `getLeagues()`, `getLeagueBySlug(slug)`
+
+### Routes
+- `/` — dashboard listing players, teams, leagues
+- `/players/[id]` — player profile (supports current sample ids `p1`, `p2`, `p3`)
+
+### Getting started
 ```bash
-npm run dev
-# or
-yarn dev
-# or
+pnpm install
 pnpm dev
-# or
-bun dev
+# open http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Editing data
+Update the JSON files in `src/data/` and restart dev if needed. Keep values aligned with the interfaces in `src/types/index.ts`. Add more ids to enable new player pages.***
