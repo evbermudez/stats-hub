@@ -1,5 +1,6 @@
 import { notFound } from 'next/navigation';
 
+import { getPlayerSeasonAverages } from '@/data/stats';
 import { getPlayerById, getPlayers, getTeamBySlug } from '@/lib/data';
 
 type PlayerPageProps = {
@@ -23,6 +24,7 @@ export default async function PlayerPage({ params }: PlayerPageProps) {
   const currentTeam = player.currentTeamSlug
     ? getTeamBySlug(player.currentTeamSlug)
     : undefined;
+  const seasonAverages = getPlayerSeasonAverages(player.id, currentTeam?.season ?? '');
 
   const height = player.heightCm ? `${player.heightCm} cm` : '—';
   const weight = player.weightKg ? `${player.weightKg} kg` : '—';
@@ -73,6 +75,54 @@ export default async function PlayerPage({ params }: PlayerPageProps) {
             </div>
           </section>
         </div>
+
+        <section className="rounded-xl border border-slate-800 bg-slate-900/40 p-4 shadow-lg shadow-slate-900/40">
+          <h2 className="mb-3 text-lg font-semibold">Season Averages</h2>
+          {seasonAverages ? (
+            <div className="overflow-x-auto">
+              <table className="w-full text-sm">
+                <thead className="text-xs uppercase tracking-[0.2em] text-slate-500">
+                  <tr>
+                    <th className="py-2 text-left">Season</th>
+                    <th className="py-2 text-right">GP</th>
+                    <th className="py-2 text-right">PTS</th>
+                    <th className="py-2 text-right">REB</th>
+                    <th className="py-2 text-right">AST</th>
+                    <th className="py-2 text-right">STL</th>
+                    <th className="py-2 text-right">BLK</th>
+                    <th className="py-2 text-right">FG%</th>
+                    <th className="py-2 text-right">3P%</th>
+                    <th className="py-2 text-right">FT%</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td className="py-2 text-left font-medium text-slate-100">
+                      {currentTeam?.season ?? '—'}
+                    </td>
+                    <td className="py-2 text-right">{seasonAverages.games}</td>
+                    <td className="py-2 text-right">{seasonAverages.points}</td>
+                    <td className="py-2 text-right">{seasonAverages.rebounds}</td>
+                    <td className="py-2 text-right">{seasonAverages.assists}</td>
+                    <td className="py-2 text-right">{seasonAverages.steals}</td>
+                    <td className="py-2 text-right">{seasonAverages.blocks}</td>
+                    <td className="py-2 text-right">
+                      {seasonAverages.fgPct !== undefined ? `${seasonAverages.fgPct}%` : '—'}
+                    </td>
+                    <td className="py-2 text-right">
+                      {seasonAverages.tpPct !== undefined ? `${seasonAverages.tpPct}%` : '—'}
+                    </td>
+                    <td className="py-2 text-right">
+                      {seasonAverages.ftPct !== undefined ? `${seasonAverages.ftPct}%` : '—'}
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          ) : (
+            <p className="text-sm text-slate-500">No season stats available.</p>
+          )}
+        </section>
 
         <section className="rounded-xl border border-slate-800 bg-slate-900/40 p-4 shadow-lg shadow-slate-900/40">
           <h2 className="mb-3 text-lg font-semibold">Team History</h2>

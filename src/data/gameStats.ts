@@ -6,6 +6,12 @@ type PlayerStatLine = {
   steals: number;
   blocks: number;
   minutes: number;
+  fgMade?: number;
+  fgAttempted?: number;
+  tpMade?: number;
+  tpAttempted?: number;
+  ftMade?: number;
+  ftAttempted?: number;
 };
 
 export type TeamGameStats = {
