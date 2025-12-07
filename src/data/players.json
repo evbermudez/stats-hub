@@ -1,0 +1,35 @@
+[
+  {
+    "id": "p1",
+    "firstName": "Jalen",
+    "lastName": "Cruz",
+    "jerseyNumber": 3,
+    "position": "PG",
+    "heightCm": 183,
+    "weightKg": 78,
+    "teamHistory": ["davao-dragons-2024"],
+    "currentTeamSlug": "davao-dragons-2025"
+  },
+  {
+    "id": "p2",
+    "firstName": "Miles",
+    "lastName": "Santos",
+    "jerseyNumber": 11,
+    "position": "SG",
+    "heightCm": 196,
+    "weightKg": 88,
+    "teamHistory": ["manila-sharks-2024", "davao-dragons-2023"],
+    "currentTeamSlug": "davao-dragons-2025"
+  },
+  {
+    "id": "p3",
+    "firstName": "Kofi",
+    "lastName": "Ramirez",
+    "jerseyNumber": 22,
+    "position": "PF",
+    "heightCm": 203,
+    "weightKg": 103,
+    "teamHistory": ["cebu-sailors-2024"],
+    "currentTeamSlug": "davao-dragons-2025"
+  }
+]

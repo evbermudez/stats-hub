@@ -1,0 +1,20 @@
+[
+  {
+    "slug": "davao-dragons-2025",
+    "name": "Davao Dragons",
+    "season": "2025",
+    "city": "Davao City",
+    "primaryColor": "#007037",
+    "secondaryColor": "#ff8b00",
+    "leagueSlug": "summer-league-2025"
+  },
+  {
+    "slug": "manila-sharks-2025",
+    "name": "Manila Sharks",
+    "season": "2025",
+    "city": "Manila",
+    "primaryColor": "#0a4d8c",
+    "secondaryColor": "#e0e6ed",
+    "leagueSlug": "summer-league-2025"
+  }
+]
