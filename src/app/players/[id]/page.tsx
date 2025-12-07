@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { notFound } from 'next/navigation';
 
 import { getPlayerSeasonAverages } from '@/data/stats';
@@ -68,7 +69,16 @@ export default async function PlayerPage({ params }: PlayerPageProps) {
           <section className="rounded-xl border border-slate-800 bg-slate-900/40 p-4 shadow-lg shadow-slate-900/40">
             <h2 className="mb-3 text-lg font-semibold">Current Team</h2>
             <div className="rounded-lg border border-slate-800 bg-slate-900/70 px-3 py-2 text-sm">
-              <p className="font-medium text-slate-200">{teamLabel}</p>
+              {currentTeam ? (
+                <Link
+                  href={`/teams/${currentTeam.slug}`}
+                  className="font-medium text-slate-200 hover:underline"
+                >
+                  {teamLabel}
+                </Link>
+              ) : (
+                <p className="font-medium text-slate-200">{teamLabel}</p>
+              )}
               {currentTeam?.city && (
                 <p className="text-slate-500">{currentTeam.city}</p>
               )}
