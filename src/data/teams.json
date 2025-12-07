@@ -16,5 +16,23 @@
     "primaryColor": "#0a4d8c",
     "secondaryColor": "#e0e6ed",
     "leagueSlug": "summer-league-2025"
+  },
+  {
+    "slug": "cebu-sailors-2025",
+    "name": "Cebu Sailors",
+    "season": "2025",
+    "city": "Cebu City",
+    "primaryColor": "#0057b8",
+    "secondaryColor": "#f6b90f",
+    "leagueSlug": "summer-league-2025"
+  },
+  {
+    "slug": "quezon-kings-2025",
+    "name": "Quezon Kings",
+    "season": "2025",
+    "city": "Quezon City",
+    "primaryColor": "#1d4ed8",
+    "secondaryColor": "#f97316",
+    "leagueSlug": "summer-league-2025"
   }
 ]

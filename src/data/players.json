@@ -19,7 +19,7 @@
     "heightCm": 196,
     "weightKg": 88,
     "teamHistory": ["manila-sharks-2024", "davao-dragons-2023"],
-    "currentTeamSlug": "davao-dragons-2025"
+    "currentTeamSlug": "manila-sharks-2025"
   },
   {
     "id": "p3",
@@ -31,5 +31,192 @@
     "weightKg": 103,
     "teamHistory": ["cebu-sailors-2024"],
     "currentTeamSlug": "davao-dragons-2025"
+  },
+  {
+    "id": "p4",
+    "firstName": "Andre",
+    "lastName": "Navarro",
+    "jerseyNumber": 8,
+    "position": "SF",
+    "heightCm": 198,
+    "weightKg": 92,
+    "teamHistory": ["cebu-sailors-2024"],
+    "currentTeamSlug": "cebu-sailors-2025"
+  },
+  {
+    "id": "p5",
+    "firstName": "Leo",
+    "lastName": "Fernandez",
+    "jerseyNumber": 15,
+    "position": "C",
+    "heightCm": 210,
+    "weightKg": 118,
+    "teamHistory": ["iloilo-guardians-2024", "manila-sharks-2023"],
+    "currentTeamSlug": "manila-sharks-2025"
+  },
+  {
+    "id": "p6",
+    "firstName": "Renz",
+    "lastName": "Villanueva",
+    "jerseyNumber": 5,
+    "position": "PG",
+    "heightCm": 180,
+    "weightKg": 76,
+    "teamHistory": ["quezon-kings-2024"],
+    "currentTeamSlug": "quezon-kings-2025"
+  },
+  {
+    "id": "p7",
+    "firstName": "RJ",
+    "lastName": "Morales",
+    "jerseyNumber": 4,
+    "position": "SG",
+    "heightCm": 190,
+    "weightKg": 84,
+    "teamHistory": ["davao-dragons-2024"],
+    "currentTeamSlug": "davao-dragons-2025"
+  },
+  {
+    "id": "p8",
+    "firstName": "Tomas",
+    "lastName": "Del Rosario",
+    "jerseyNumber": 20,
+    "position": "PF",
+    "heightCm": 206,
+    "weightKg": 109,
+    "teamHistory": ["davao-dragons-2024", "manila-sharks-2023"],
+    "currentTeamSlug": "davao-dragons-2025"
+  },
+  {
+    "id": "p9",
+    "firstName": "Dion",
+    "lastName": "Capistrano",
+    "jerseyNumber": 55,
+    "position": "C",
+    "heightCm": 212,
+    "weightKg": 120,
+    "teamHistory": ["iloilo-guardians-2024"],
+    "currentTeamSlug": "davao-dragons-2025"
+  },
+  {
+    "id": "p10",
+    "firstName": "Caleb",
+    "lastName": "Uy",
+    "jerseyNumber": 2,
+    "position": "PG",
+    "heightCm": 181,
+    "weightKg": 77,
+    "teamHistory": ["manila-sharks-2024"],
+    "currentTeamSlug": "manila-sharks-2025"
+  },
+  {
+    "id": "p11",
+    "firstName": "Jasper",
+    "lastName": "Lim",
+    "jerseyNumber": 13,
+    "position": "SF",
+    "heightCm": 199,
+    "weightKg": 95,
+    "teamHistory": ["cebu-sailors-2024"],
+    "currentTeamSlug": "manila-sharks-2025"
+  },
+  {
+    "id": "p12",
+    "firstName": "Noel",
+    "lastName": "Pascual",
+    "jerseyNumber": 31,
+    "position": "PF",
+    "heightCm": 205,
+    "weightKg": 108,
+    "teamHistory": ["manila-sharks-2024", "davao-dragons-2023"],
+    "currentTeamSlug": "manila-sharks-2025"
+  },
+  {
+    "id": "p13",
+    "firstName": "Miguel",
+    "lastName": "Abad",
+    "jerseyNumber": 1,
+    "position": "PG",
+    "heightCm": 184,
+    "weightKg": 79,
+    "teamHistory": ["cebu-sailors-2024"],
+    "currentTeamSlug": "cebu-sailors-2025"
+  },
+  {
+    "id": "p14",
+    "firstName": "Kenji",
+    "lastName": "Tan",
+    "jerseyNumber": 9,
+    "position": "SG",
+    "heightCm": 188,
+    "weightKg": 83,
+    "teamHistory": ["cebu-sailors-2024"],
+    "currentTeamSlug": "cebu-sailors-2025"
+  },
+  {
+    "id": "p15",
+    "firstName": "Arvin",
+    "lastName": "Castillo",
+    "jerseyNumber": 17,
+    "position": "SF",
+    "heightCm": 201,
+    "weightKg": 92,
+    "teamHistory": ["manila-sharks-2024"],
+    "currentTeamSlug": "cebu-sailors-2025"
+  },
+  {
+    "id": "p16",
+    "firstName": "Harold",
+    "lastName": "De la Cruz",
+    "jerseyNumber": 44,
+    "position": "C",
+    "heightCm": 209,
+    "weightKg": 114,
+    "teamHistory": ["manila-sharks-2024"],
+    "currentTeamSlug": "cebu-sailors-2025"
+  },
+  {
+    "id": "p17",
+    "firstName": "Paolo",
+    "lastName": "Gutierrez",
+    "jerseyNumber": 7,
+    "position": "SG",
+    "heightCm": 193,
+    "weightKg": 86,
+    "teamHistory": ["quezon-kings-2024"],
+    "currentTeamSlug": "quezon-kings-2025"
+  },
+  {
+    "id": "p18",
+    "firstName": "Markus",
+    "lastName": "Dela Peña",
+    "jerseyNumber": 12,
+    "position": "SF",
+    "heightCm": 200,
+    "weightKg": 97,
+    "teamHistory": ["iloilo-guardians-2024"],
+    "currentTeamSlug": "quezon-kings-2025"
+  },
+  {
+    "id": "p19",
+    "firstName": "Anton",
+    "lastName": "Rivera",
+    "jerseyNumber": 25,
+    "position": "PF",
+    "heightCm": 207,
+    "weightKg": 111,
+    "teamHistory": ["quezon-kings-2024", "davao-dragons-2023"],
+    "currentTeamSlug": "quezon-kings-2025"
+  },
+  {
+    "id": "p20",
+    "firstName": "Gab",
+    "lastName": "Soriano",
+    "jerseyNumber": 50,
+    "position": "C",
+    "heightCm": 211,
+    "weightKg": 116,
+    "teamHistory": ["quezon-kings-2024"],
+    "currentTeamSlug": "quezon-kings-2025"
   }
 ]
